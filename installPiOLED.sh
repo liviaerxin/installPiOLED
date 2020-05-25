@@ -6,14 +6,18 @@
 # MIT License
 
 # Set our access to I2C permissions
-sudo usermod -aG i2c $USER
+sudo groupadd -f -r gpio
+sudo usermod -aG gpio $USER
+cd /tmp
+git clone https://github.com/NVIDIA/jetson-gpio.git
+sudo cp ~/jetson-gpio/lib/python/Jetson/GPIO/99-gpio.rules /etc/udev/rules.d
+cd -
 sudo udevadm control --reload-rules && sudo udevadm trigger
 sudo apt-get update
 sudo apt install python3-pip python3-pil -y
-# Install the Adafruit library for the SSD1306 OLED driver
-# Note that Adafruit-SSD1306 library is deprecated; newer versions of
-# the library use CircuitPython
-pip3 install Adafruit-SSD1306
+# Install the new versions of Adafruit library for the SSD1306 OLED driver which uses CircuitPython
+sudo pip3 install adafruit-blinka
+sudo pip3 install adafruit-circuitpython-ssd1306
 # We should be able to access the PiOLED now
 # Note that we may have to reboot for the i2c change to take effect
 

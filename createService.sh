@@ -9,7 +9,7 @@ python3 -m pip install --user --upgrade setuptools wheel
 # Create a wheel installer for the stat program
 sudo python3 setup.py sdist bdist_wheel
 cd dist
-sudo pip3 install pioled-1.0-py3-none-any.whl 
+sudo pip3 install pioled-2.0-py3-none-any.whl 
 # Create the service, and start 'er up
 cd ../utils
 python3 create_stats_service.py

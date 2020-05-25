@@ -1,5 +1,9 @@
 # installPiOLED
-Install the Adafruit PiOLED 128x32 Monochrome OLED driver (3527)
+Install the Adafruit PiOLED 128x32 Monochrome OLED(other OLEDs using `SSD1306` driver are also available)
+
+**note:**
+I do some little changes to replace [DEPRECATED LIBRARY Adafruit Python SSD1306](https://github.com/adafruit/Adafruit_Python_SSD1306) with the [Adafruit_CircuitPython_SSD1306](https://github.com/adafruit/Adafruit_CircuitPython_SSD1306) which depends on [CircuitPython & Jetson Nano](https://learn.adafruit.com/circuitpython-libraries-on-linux-and-the-nvidia-jetson-nano/circuitpython-dragonboard)
+
 
 Original article on JetsonHacks: https://wp.me/p7ZgI9-33H
 
@@ -26,8 +30,20 @@ You should consider filling out the setup.py file in the top directory more full
   
 <h3>Notes</h3>
 
-<h4>December, 2019</h4>
+<h4>May, 2020</h4>
 Initial Release
 
 * Jetson Nano
 * L4T 32.2.1/JetPack 4.2.2
+
+## Wiring Diagram
+
+[Jetson Nano I2C bus](https://custom-build-robots.com/top-story-en/jetson-nano-oled-display-ssd1306/12124?lang=en#prettyPhoto[12124]/2/)
+
+## References
+
+[CircuitPython & Jetson Nano](https://learn.adafruit.com/circuitpython-libraries-on-linux-and-the-nvidia-jetson-nano/circuitpython-dragonboard)
+
+[use OLEDs with CircuitPython Wiring](https://learn.adafruit.com/monochrome-oled-breakouts/circuitpython-wiring)
+
+[JETSON NANO – OLED DISPLAY SSD1306](https://custom-build-robots.com/top-story-en/jetson-nano-oled-display-ssd1306/12124?lang=en#prettyPhoto)
